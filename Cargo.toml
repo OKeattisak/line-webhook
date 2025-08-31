@@ -1,0 +1,26 @@
+[package]
+name = "line-webhook"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.99"
+argon2 = "0.5.3"
+axum = "0.8.4"
+chrono = "0.4.41"
+dotenvy = "0.15.7"
+jsonwebtoken = "9.3.1"
+mockall = "0.13.1"
+rand = "0.9.2"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.143"
+tokio = { version = "1.47.1", features = ["full"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.20"
+diesel = { version = "2.2.12", features = [
+    "postgres",
+    "serde_json",
+    "chrono",
+    "r2d2",
+] }
+tower-http = { version = "0.6.6", features = ["full"] }

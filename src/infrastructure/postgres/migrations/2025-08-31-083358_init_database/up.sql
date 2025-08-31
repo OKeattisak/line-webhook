@@ -1,0 +1,18 @@
+CREATE TABLE line_channels (
+  id SERIAL PRIMARY KEY,
+  channel_id VARCHAR(255) NOT NULL UNIQUE,
+  channel_secret VARCHAR(255) NOT NULL,
+  channel_access_token VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE line_webhook_events (
+  id SERIAL PRIMARY KEY,
+  webhook_event_id VARCHAR(255) NOT NULL UNIQUE,
+  destination VARCHAR(255) NOT NULL,
+  json_payload JSONB NOT NULL,
+  processed BOOLEAN NOT NULL DEFAULT FALSE,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
+);
