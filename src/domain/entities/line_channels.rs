@@ -9,7 +9,7 @@ use crate::{
 #[derive(Debug, Clone, Identifiable, Selectable, Queryable)]
 #[diesel(table_name = line_channels)]
 pub struct LineChannelEntity {
-    pub id: String,
+    pub id: i32,
     pub channel_id: String,
     pub channel_secret: String,
     pub channel_access_token: String,

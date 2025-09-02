@@ -4,7 +4,7 @@ use crate::domain::entities::line_channels::{AddLineChannelEntity, UpdateLineCha
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LineChannelModel {
-    pub id: String,
+    pub id: i32,
     pub channel_id: String,
     pub channel_secret: String,
     pub channel_access_token: String,
