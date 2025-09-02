@@ -6,4 +6,4 @@ file = "src/infrastructure/postgres/schema.rs"
 custom_type_derives = ["diesel::query_builder::QueryId", "Clone"]
 
 [migrations_directory]
-dir = "D:/Repos/line-webhook/src/infrastructure/postgres/migrations"
+dir = "src/infrastructure/postgres/migrations"

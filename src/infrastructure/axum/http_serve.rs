@@ -12,7 +12,8 @@ use tower_http::{
 use tracing::info;
 
 use crate::{
-    config::config_model::DotEnvyConfig, infrastructure::postgres::postgres_connection::PgPool,
+    config::config_model::DotEnvyConfig,
+    infrastructure::{axum::routers, postgres::postgres_connection::PgPool},
 };
 
 use super::default_routers;
@@ -20,6 +21,10 @@ use super::default_routers;
 pub async fn start(config: Arc<DotEnvyConfig>, db_pool: Arc<PgPool>) -> Result<()> {
     let app: Router = Router::new()
         .fallback(default_routers::not_found)
+        .nest(
+            "/line-channels",
+            routers::line_channels::routers(Arc::clone(&db_pool)),
+        )
         .route("/health-check", get(default_routers::health_check))
         .layer(TimeoutLayer::new(Duration::from_secs(
             config.server.time_out,
