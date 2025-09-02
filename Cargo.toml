@@ -7,7 +7,7 @@ edition = "2024"
 anyhow = "1.0.99"
 argon2 = "0.5.3"
 axum = "0.8.4"
-chrono = "0.4.41"
+chrono = { version = "0.4.41", features = ["serde"] }
 dotenvy = "0.15.7"
 jsonwebtoken = "9.3.1"
 mockall = "0.13.1"
@@ -24,3 +24,4 @@ diesel = { version = "2.2.12", features = [
     "r2d2",
 ] }
 tower-http = { version = "0.6.6", features = ["full"] }
+async-trait = "0.1.89"

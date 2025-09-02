@@ -3,6 +3,16 @@ use serde::{Deserialize, Serialize};
 use crate::domain::entities::line_channels::{AddLineChannelEntity, UpdateLineChannelEntity};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LineChannelModel {
+    pub id: String,
+    pub channel_id: String,
+    pub channel_secret: String,
+    pub channel_access_token: String,
+    pub created_at: chrono::NaiveDateTime,
+    pub updated_at: chrono::NaiveDateTime,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AddLineChannelModel {
     pub channel_id: String,
     pub channel_secret: String,
