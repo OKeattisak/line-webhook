@@ -18,11 +18,8 @@ diesel::table! {
     line_webhook_events (id) {
         id -> Int4,
         #[max_length = 255]
-        webhook_event_id -> Varchar,
-        #[max_length = 255]
         destination -> Varchar,
-        json_payload -> Jsonb,
-        processed -> Bool,
+        payload -> Jsonb,
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
     }

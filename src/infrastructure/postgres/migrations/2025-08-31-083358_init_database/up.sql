@@ -9,10 +9,8 @@ CREATE TABLE line_channels (
 
 CREATE TABLE line_webhook_events (
   id SERIAL PRIMARY KEY,
-  webhook_event_id VARCHAR(255) NOT NULL UNIQUE,
   destination VARCHAR(255) NOT NULL,
-  json_payload JSONB NOT NULL,
-  processed BOOLEAN NOT NULL DEFAULT FALSE,
+  payload JSONB NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
 );
